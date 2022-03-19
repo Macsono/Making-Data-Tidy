@@ -1,0 +1,25 @@
+---
+title: "Macson's codebook"
+author: "Macson"
+date: "3/18/2022"
+output: html_document
+---
+
+
+# Code book
+The outcome variable was an integer while the covariates were numerical values. Altogether there were 10,299 observations, 561 covariates and 1 outcome. The range of values for the covariates was from -1 to 1.
+
+The following objects and transformations were created in R in this order given below
+
+x_test: covariates for the test data
+y_test: outcome variabel for test data
+x_train: covariates for the train data
+y_train: outcome variabel for test data
+x_full: combined test and train covariate data but without variable names
+header: a datatable containing the names of covariates
+data: combined test and train covariate data with variable names, thanks to data.table
+y_full: combined test and train outcome data, renamed the variable V1 to y
+df_full: complete data set, column binded both x and y variables
+newdf: selects only variables that contain the strings "std()" and "mean()", then labelled the outcome variables using words
+tidy_data: Using the pipe operator, this was formed by first grouping by the labels (y) and then finding the mean of all covariates in newdf using the summarise_at() function.
+
